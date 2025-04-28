@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.danielang.calculation.grpc;
+
+service CalculatorService {
+    rpc Calculate (CalculationRequest) returns (CalculationResponse);
+}
+
+message CalculationRequest {
+    string expression = 1;
+    repeated CalculationParameter parameters = 2; 
+    string calculation_type = 3; // LATEX or RESULT
+}
+
+message CalculationParameter {
+    string name = 1;
+    double value = 2;
+}
+
+message CalculationResponse {
+    string response_code = 1; // The code that was executed
+    string response_msg = 2; // For error messages, if any
+    double result = 3;
+    string latex = 4; // The LaTeX representation of the result
+}
