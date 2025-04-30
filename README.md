@@ -1,14 +1,5 @@
-1. python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. calculation.proto
-
-```json
-{
-    "calculation_type": "LATEX",
-    "expression": "Piecewise((x**2, x < 0), (sin(x)**2 + cos(x)**2, True))",
-    "parameters": [
-        {
-            "name": "x",
-            "value": -2
-        }
-    ]
-}
-```
+# awsurance product calculation
+## Overview
+This service is responsible for calculating insurance formulas by using grpc.
+## Features
+- Calculate insurance product formula; it is accessible exclusively to the product facility service.
